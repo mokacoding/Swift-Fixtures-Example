@@ -12,13 +12,13 @@ import XCTest
 class PizzaTests: XCTestCase {
 
   func testIsVegetarianWithVegetarianToppings() {
-    let pizza = Pizza(name: "name", toppings: [TomatoSauce(), Mozzarella()])
+    let pizza = Pizza.fixture(toppings: [TomatoSauce(), Mozzarella()])
 
     XCTAssertTrue(pizza.isVegeterian)
   }
 
   func testIsVegetarianWithNonVegetarianToppings() {
-    let pizza = Pizza(name: "name", toppings: [TomatoSauce(), Mozzarella(), Salami(extraSpicy: true)])
+    let pizza = Pizza.fixture(toppings: [TomatoSauce(), Mozzarella(), Salami(extraSpicy: true)])
 
     XCTAssertFalse(pizza.isVegeterian)
   }

@@ -18,7 +18,7 @@ class PizzaTests: XCTestCase {
   }
 
   func testIsVegetarianWithNonVegetarianToppings() {
-    let pizza = Pizza(name: "name", toppings: [TomatoSauce(), Mozzarella(), Salami()])
+    let pizza = Pizza(name: "name", toppings: [TomatoSauce(), Mozzarella(), Salami(extraSpicy: true)])
 
     XCTAssertFalse(pizza.isVegeterian)
   }

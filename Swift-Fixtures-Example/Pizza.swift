@@ -20,6 +20,7 @@ struct Mozzarella: Topping {
 
 struct Salami: Topping {
   let isVegetarian = false
+  let extraSpicy: Bool
 }
 
 struct Pizza {

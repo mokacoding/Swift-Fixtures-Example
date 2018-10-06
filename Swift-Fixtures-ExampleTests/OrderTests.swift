@@ -12,20 +12,7 @@ import XCTest
 class OrderTests: XCTestCase {
 
   func testItemsCount() {
-    let pizza = Pizza(
-      name: "Margherita",
-      toppings: [TomatoSauce(), Mozzarella(), Salami(extraSpicy: true)]
-    )
-    let deliveryAddress = Address(
-      street: "1 Infinity Loop",
-      tow: "Cupertino",
-      state: "California",
-      postCode: "95014",
-      country: "USA"
-    )
-    let drinks = [Water()]
-
-    let order = Order(pizzas: [pizza], drinks: drinks, address: deliveryAddress)
+    let order = Order.fixture(pizzas: [.fixture()], drinks: [Water()])
 
     XCTAssertEqual(order.itemsCount, 2)
   }
